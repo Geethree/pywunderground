@@ -17,7 +17,10 @@
 # along with pywunderground.  If not, see <http://www.gnu.org/licenses/>.
 import requests
 import json
-from urllib import quote
+try:
+    from urllib import quote
+except ImportError:
+    from urllib.parse import quote
 
 
 __all__ = ['FEATURES', 'autocomplete', 'request']
